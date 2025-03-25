@@ -41,7 +41,7 @@ def initialize_game_state(word):
     return {
         "word": word,
         "guessed_letters": [],
-        "word_completion": "_ " * len(word),
+        "word_completion": " _ " * len(word),
         "tries_remaining": 6
     }
 
@@ -53,8 +53,8 @@ def initialize_game_state(word):
 # - Prints the letters that have been guessed so far
 # - Prints the number of tries remaining
 # ASCII art for hangman states
-HANGMAN_STAGES = [
-    '''
+HANGMAN_STAGES = [   
+    r'''
       +---+
       |   |
           |
@@ -62,23 +62,23 @@ HANGMAN_STAGES = [
           |
           |
     =========''',
-    '''
-      +---+
-      |   |
-      O   |
-          |
-          |
-          |
-    =========''',
-    '''
+    r'''
       +---+
       |   |
       O   |
+          |
+          |
+          |
+    =========''',
+    r'''
+      +---+
+      |   |
+      O   |
       |   |
           |
           |
     =========''',
-    '''
+    r'''
       +---+
       |   |
       O   |
@@ -86,7 +86,7 @@ HANGMAN_STAGES = [
           |
           |
     =========''',
-    '''
+    r'''
       +---+
       |   |
       O   |
@@ -94,7 +94,7 @@ HANGMAN_STAGES = [
           |
           |
     =========''',
-    '''
+    r'''
       +---+
       |   |
       O   |
@@ -102,7 +102,7 @@ HANGMAN_STAGES = [
      /    |
           |
     =========''',
-    '''
+    r'''
       +---+
       |   |
       O   |
@@ -202,10 +202,10 @@ def play_hangman():
 # - Calls the main game function
 # - Handles play again logic
     # Print a welcome message
-    print("Welcome to Hangman!")
     # Call the main game function to start the game
-    if __name__ == "__main__":
-        while True:
-            play_hangman()
-            if input("Play again? (yes/no): ").lower() != "yes":
-                break
+if __name__ == "__main__":
+    print("Welcome to Hangman!")
+    while True:
+        play_hangman()
+        if input("Play again? (yes/no): ").lower() != "yes":
+            break
